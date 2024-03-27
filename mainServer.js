@@ -87,10 +87,11 @@ const dbTOjson = function (data_for_json, arrayOfObjects, data_for_json_Array) {
       console.error("Error reading file:", err);
       return;
     }
+    sendToAPI();
   });
 };
 
-const sentToAPI = function () {
+const sendToAPI = function () {
   fs.readFile("census.json", "utf8", (err, data) => {
     const axios = require("axios");
     let access_token = "";
@@ -125,7 +126,7 @@ const sentToAPI = function () {
         const header = {
           "x-auth-token": access_token,
         };
-        console.log(header);
+        /* console.log("jsonData", jsonData); */
         axios
           .post(api_url_report_post, jsonData, { headers: header })
           .then((postReportResponse) => {
@@ -179,7 +180,6 @@ const handleNotification = async (msg) => {
 
     dbTOjson(data_for_json, arrayOfObjects, data_for_json_Array);
     //run login and posting
-    sentToAPI();
   } catch (error) {
     console.error("Error fetching rows:", error);
   }

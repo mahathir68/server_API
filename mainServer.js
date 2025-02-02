@@ -108,13 +108,13 @@ const sentToAPI = function () {
       return;
     }
 
-    const api_url_login = "https://gi4l.org/api/users/login/token";
+    const api_url_login = "###";
     let login_data = {
-      email: "mahathir.nabil.api@thesimonproject.com",
-      password: "SimonApi123",
+      email: "###",
+      password: "###",
     };
 
-    const api_url_report_post = "https://gi4l.org/api/reports/test1?type=full";
+    const api_url_report_post = "###";
     axios
       .post(api_url_login, login_data)
       .then((response) => {

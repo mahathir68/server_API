@@ -17,13 +17,13 @@ fs.readFile("census.json", "utf8", (err, data) => {
     return;
   }
 
-  const api_url_login = "https://gi4l.org/api/users/login/token";
+  const api_url_login = "###";
   let login_data = {
     email: "####",
     password: "###",
   };
 
-  const api_url_report_post = "https://gi4l.org/api/reports/test1?type=full";
+  const api_url_report_post = "###";
   axios
     .post(api_url_login, login_data)
     .then((response) => {
